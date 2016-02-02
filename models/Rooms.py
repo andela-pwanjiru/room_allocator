@@ -22,6 +22,7 @@ class LivingSpace(Room):
 
     # return true if person is added, false otherwise
     def add_person(self, person):
+        print person.job_title
         if person.job_title == 'fellow':
             self.people.append(person)
             return True
