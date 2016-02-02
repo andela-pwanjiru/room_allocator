@@ -6,7 +6,7 @@ class Person(object):
 
 class Fellow(Person):
     def __init__(self, name, choice):
-        Person.__init__(name)
+        self.name = name
         self.choice = choice
         self.job_title = 'fellow'
 
@@ -14,5 +14,5 @@ class Fellow(Person):
 class Staff(Person):
 
     def __init___(self, name):
-        Person.__init__(name)
-        self.job_title = 'Staff'
+        self.name = name
+        self.job_title = 'staff'
