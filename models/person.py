@@ -13,6 +13,6 @@ class Fellow(Person):
 
 class Staff(Person):
 
-    def __init___(self, name):
+    def __init__(self, name):
         self.name = name
         self.job_title = 'staff'
