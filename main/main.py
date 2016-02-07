@@ -11,6 +11,8 @@ class amity(object):
         self.people = []
         self.offices = []
         self.living_spaces = []
+        self.unallocated = []
+        self.unallocated_fellows = []
 
     def populate(self):
         office_names = ['Valhalla', 'Oculus', 'Krypton', 'Shire',
@@ -64,6 +66,7 @@ class amity(object):
                 office.add_person(self.people[people_count])
                 people_count += 1
 
+        self.unallocated = self.people[people_count:]
         people_count = 0
         # allocate the living_spaces
         for living_space in self.living_spaces:
@@ -72,3 +75,8 @@ class amity(object):
                     break
                 living_space.add_person(self.people[people_count])
                 people_count += 1
+
+        for i in range(people_count, len(self.people)):
+            if self.people[i].job_title == 'fellow' and \
+                    self.people[i].choice is True:
+                self.unallocated_fellows.append(self.people[i])
