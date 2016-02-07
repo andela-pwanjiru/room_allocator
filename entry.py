@@ -1,15 +1,18 @@
+"""Importations"""
 from main.main import amity
 import sys
 
 x = amity()
 
 
+# Set up amity
 def initialise_amity():
     x.read_file('main/input.txt')
     x.populate()
     x.allocate_rooms()
 
 
+# Prints office allocations
 def get_offices():
     for office in x.offices:
         print 'These are the people in: %s' % (office.name)
@@ -17,6 +20,7 @@ def get_offices():
             print person.name
 
 
+# Prints livingspace allocations
 def get_livingspaces():
     for livingspace in x.living_spaces:
         print 'These are the people in: %s' % (livingspace.name)
@@ -24,6 +28,7 @@ def get_livingspaces():
             print person.name
 
 
+# prints individual office with its occupants
 def individual_office(name):
 
     for office in x.offices:
@@ -32,11 +37,13 @@ def individual_office(name):
                 print person.name
 
 
+# Gets unallocated employees
 def get_unallocated():
     """Return a list of unallocated employees"""
     print [m.name for m in x.unallocated]
 
 
+# prints unallocated fellows
 def get_unallocated_fellows():
     print [r.name for r in x.unallocated_fellows]
 

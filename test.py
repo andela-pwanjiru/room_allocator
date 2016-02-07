@@ -8,7 +8,7 @@ from models.person import Staff
 
 
 class AmityTest(unittest.TestCase):
-    """Test models created"""
+    """Tests class amity"""
     def setUp(self):
         self.amity = amity()
         self.amity.populate()
@@ -49,6 +49,8 @@ class AmityTest(unittest.TestCase):
 
 
 class ModelsTest(unittest.TestCase):
+
+    """Tests models created"""
 
     def test_office_creation(self):
         """Test correct office instantiation"""

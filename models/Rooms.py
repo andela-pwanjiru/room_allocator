@@ -1,3 +1,4 @@
+# A room superclass.
 class Room(object):
     def __init__(self, name):
         self.name = name
@@ -10,6 +11,7 @@ class Room(object):
             return False
 
 
+# office class extending from Room
 class Office(Room):
     max_people = 6
 
@@ -17,6 +19,7 @@ class Office(Room):
         self.people.append(person)
 
 
+# represents a living space, extended from Room.
 class LivingSpace(Room):
     max_people = 4
 

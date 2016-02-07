@@ -1,9 +1,11 @@
+# person superclass
 class Person(object):
 
     def __init__(self, name):
         self.name = name
 
 
+# fellow class extended from person
 class Fellow(Person):
     def __init__(self, name, choice):
         self.name = name
@@ -11,6 +13,7 @@ class Fellow(Person):
         self.job_title = 'fellow'
 
 
+# staff class extended from person
 class Staff(Person):
 
     def __init__(self, name):
