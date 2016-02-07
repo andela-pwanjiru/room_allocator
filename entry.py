@@ -1,10 +1,6 @@
 from main.main import amity
 import sys
 
-# models = populate()
-# print [x.name for x in models['offices']]
-# print [x.name for x in models['living_spaces']]
-
 x = amity()
 
 
@@ -47,7 +43,7 @@ def get_unallocated_fellows():
 
 initialise_amity()
 
-
+"""List of command line arguments"""
 if sys.argv[1] == "get_offices":
     get_offices()
 
@@ -59,13 +55,9 @@ elif sys.argv[1] == "print" and sys.argv[2] == \
     individual_office(sys.argv[4])
 
 # show people (both fellows and staff) who were not allocated offices.
-elif sys.argv[1] == "get_unallocated":
-    get_unallocated()
-
-    """# call allocate rooms
-    if len(sys.argv) == 3 and sys.argv[1] == ""
-    and sys.argv[2][-3:] == "txt":
-        building.allocate(sys.argv[2])"""
+elif sys.argv[1] == "print" and sys.argv[2] == "unallocated" and \
+        sys.argv[3] == "employees":
+    get_unallocated_fellows()
 
 # print fellows who wanted a living space but were unallocated.
 elif sys.argv[1] == "print" and sys.argv[2] == "unallocated" and \

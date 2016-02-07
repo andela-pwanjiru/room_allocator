@@ -1,3 +1,4 @@
+"""Import Statements"""
 from models.Rooms import Office
 from models.Rooms import LivingSpace
 from models.person import Fellow
@@ -5,7 +6,9 @@ from models.person import Staff
 import random
 
 
-# returns the people from the input file passed.
+"""Returns the people from the input file passed."""
+
+
 class amity(object):
     def __init__(self):
         self.people = []
@@ -53,30 +56,32 @@ class amity(object):
 
         return self.people
 
+    """Allocates rooms"""
+
     def allocate_rooms(self):
-        random.shuffle(self.people)
-        people_count = 0
-        people_len = len(self.people)
+            random.shuffle(self.people)
+            people_count = 0
+            people_len = len(self.people)
 
-        # allocate the offices
-        for office in self.offices:
-            while office.has_space():
-                if(people_count >= people_len):
-                    break
-                office.add_person(self.people[people_count])
-                people_count += 1
+            # allocate the offices
+            for office in self.offices:
+                while office.has_space():
+                    if(people_count >= people_len):
+                        break
+                    office.add_person(self.people[people_count])
+                    people_count += 1
 
-        self.unallocated = self.people[people_count:]
-        people_count = 0
-        # allocate the living_spaces
-        for living_space in self.living_spaces:
-            while living_space.has_space():
-                if(people_count >= people_len):
-                    break
-                living_space.add_person(self.people[people_count])
-                people_count += 1
+            self.unallocated = self.people[people_count:]
+            people_count = 0
+            # allocate the living_spaces
+            for living_space in self.living_spaces:
+                while living_space.has_space():
+                    if(people_count >= people_len):
+                        break
+                    living_space.add_person(self.people[people_count])
+                    people_count += 1
 
-        for i in range(people_count, len(self.people)):
-            if self.people[i].job_title == 'fellow' and \
-                    self.people[i].choice is True:
-                self.unallocated_fellows.append(self.people[i])
+            for i in range(people_count, len(self.people)):
+                if self.people[i].job_title == 'fellow' and \
+                        self.people[i].choice is True:
+                    self.unallocated_fellows.append(self.people[i])
