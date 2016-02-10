@@ -5,7 +5,9 @@ This is a system used to allocate offices and living spaces at Amity to Andela e
 
 ### Setting up the program :
 
- Clone the repo
+
+Clone the repo
+
   ```bash
   git clone https://github.com/andela-pwanjiru/Room_allocator.git
   ```
