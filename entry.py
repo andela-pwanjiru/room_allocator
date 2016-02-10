@@ -37,6 +37,15 @@ def individual_office(name):
                 print person.name
 
 
+# prints individual living space occupants
+def individual_living(name):
+
+    for livingspace in x.living_spaces:
+        if livingspace.name == name:
+            for person in livingspace.people:
+                print person.name
+
+
 # Gets unallocated employees
 def get_unallocated():
     """Return a list of unallocated employees"""
@@ -60,6 +69,10 @@ elif sys.argv[1] == "get_livingspaces":
 elif sys.argv[1] == "print" and sys.argv[2] == \
         "members" and sys.argv[3] == "in":
     individual_office(sys.argv[4])
+
+elif sys.argv[1] == "print" and sys.argv[2] == \
+        "members" and sys.argv[3] == "in":
+    individual_living(sys.argv[4])
 
 # show people (both fellows and staff) who were not allocated offices.
 elif sys.argv[1] == "print" and sys.argv[2] == "unallocated" and \
