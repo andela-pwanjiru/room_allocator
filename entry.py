@@ -45,7 +45,6 @@ def individual_living(name):
             for person in livingspace.people:
                 print person.name
 
-
 # Gets unallocated employees
 def get_unallocated():
     """Return a list of unallocated employees"""
@@ -56,7 +55,7 @@ def get_unallocated():
 def get_unallocated_fellows():
     print [r.name for r in x.unallocated_fellows]
 
-
+"""intializes"""
 initialise_amity()
 
 """List of command line arguments"""
