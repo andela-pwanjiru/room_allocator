@@ -1,30 +1,31 @@
-# A room superclass.
 class Room(object):
+    """This class represents a room."""
     def __init__(self, name):
         self.name = name
         self.people = []
 
     def has_space(self):
+        """Check to see whether a room has a space."""
         if len(self.people) < self.__class__.max_people:
             return True
         else:
             return False
 
 
-# Office class extending from Room
 class Office(Room):
+    """This class represents an office."""
     max_people = 6
 
     def add_person(self, person):
         self.people.append(person)
 
 
-# Represents a living space, extended from Room.
 class LivingSpace(Room):
+    """This class represents a livingspace."""
     max_people = 4
 
-    # return true if person is added, false otherwise
     def add_person(self, person):
+        """Add a person to a living space."""
         if person.job_title == 'fellow':
             self.people.append(person)
             return True

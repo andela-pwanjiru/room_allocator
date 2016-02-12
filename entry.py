@@ -1,4 +1,4 @@
-"""Importations"""
+
 from main.main import Amity
 import sys
 
