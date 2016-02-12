@@ -6,7 +6,7 @@ from models.person import Staff
 import random
 
 
-class amity(object):
+class Amity(object):
     def __init__(self):
         self.people = []
         self.offices = []

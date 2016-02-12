@@ -1,8 +1,8 @@
 """Importations"""
-from main.main import amity
+from main.main import Amity
 import sys
 
-x = amity()
+x = Amity()
 
 
 # Set up amity
@@ -45,6 +45,7 @@ def individual_living(name):
             for person in livingspace.people:
                 print person.name
 
+
 # Gets unallocated employees
 def get_unallocated():
     """Return a list of unallocated employees"""
@@ -70,7 +71,7 @@ elif sys.argv[1] == "print" and sys.argv[2] == \
     individual_office(sys.argv[4])
 
 elif sys.argv[1] == "print" and sys.argv[2] == \
-        "members" and sys.argv[3] == "in":
+        "residents" and sys.argv[3] == "in":
     individual_living(sys.argv[4])
 
 # show people (both fellows and staff) who were not allocated offices.
