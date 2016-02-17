@@ -1,4 +1,3 @@
-
 from main.main import Amity
 import sys
 
@@ -14,6 +13,7 @@ def initialise_amity():
 
 # Prints office allocations
 def get_offices():
+
     for office in x.offices:
         print 'These are the people in: %s' % (office.name)
         for person in office.people:
@@ -22,6 +22,7 @@ def get_offices():
 
 # Prints livingspace allocations
 def get_livingspaces():
+
     for livingspace in x.living_spaces:
         print 'These are the people in: %s' % (livingspace.name)
         for person in livingspace.people:

@@ -1,4 +1,3 @@
-"""Import Statements"""
 from models.Rooms import Office
 from models.Rooms import LivingSpace
 from models.person import Fellow
@@ -49,7 +48,7 @@ class Amity(object):
             else:
                 raise Exception('Invalid input format')
 
-        return self.people
+        # return self.people
 
     def allocate_rooms(self):
         """Allocates rooms"""
