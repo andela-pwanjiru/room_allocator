@@ -57,12 +57,17 @@ class Amity(object):
         people_len = len(self.people)
 
         # allocate the offices
+        # 6 * 10 = 60
+        # 3
         for office in self.offices:
             while office.has_space():
-                if(people_count >= people_len):
+                if people_count >= people_len:
                     break
                 office.add_person(self.people[people_count])
                 people_count += 1
+
+            if people_count >= people_len:
+                break
 
         self.unallocated = self.people[people_count:]
         # allocate the living_spaces

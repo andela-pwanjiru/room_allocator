@@ -11,13 +11,14 @@ class Room(object):
         else:
             return False
 
+    def add_person(self, person):
+        """Add a person to a room."""
+        self.people.append(person)
+
 
 class Office(Room):
     """This class represents an office."""
     max_people = 6
-
-    def add_person(self, person):
-        self.people.append(person)
 
 
 class LivingSpace(Room):
@@ -27,7 +28,6 @@ class LivingSpace(Room):
     def add_person(self, person):
         """Add a person to a living space."""
         if person.job_title == 'fellow':
-            self.people.append(person)
+            self.add_person(person)
             return True
-        else:
-            return False
+        return False

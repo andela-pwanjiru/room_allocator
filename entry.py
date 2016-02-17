@@ -57,10 +57,9 @@ def get_unallocated():
 def get_unallocated_fellows():
     print [r.name for r in x.unallocated_fellows]
 
-"""intializes"""
 initialise_amity()
 
-"""List of command line arguments"""
+"""List of command line arguments."""
 if sys.argv[1] == "get_offices":
     get_offices()
 
