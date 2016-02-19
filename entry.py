@@ -7,8 +7,12 @@ x = Amity()
 # Set up amity
 def initialise_amity():
     x.read_file('main/input.txt')
+    x.offices
     x.populate()
-    x.allocate_rooms()
+    # # allocate persons to rooms
+    x.allocate_rooms(x.offices)
+    x.allocate_rooms(x.living_spaces)
+    # x.allocate_rooms()
 
 
 # Prints office allocations
@@ -18,15 +22,17 @@ def get_offices():
         print 'These are the people in: %s' % (office.name)
         for person in office.people:
             print person.name
+        print "\n"
 
 
 # Prints livingspace allocations
 def get_livingspaces():
-
+    # import pdb; pdb.set_trace()
     for livingspace in x.living_spaces:
         print 'These are the people in: %s' % (livingspace.name)
         for person in livingspace.people:
             print person.name
+        print "\n"
 
 
 # prints individual office with its occupants

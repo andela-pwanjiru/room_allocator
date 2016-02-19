@@ -26,7 +26,8 @@ class Amity(object):
                         'Diamond', 'Graphite', 'Gold', 'Lithium', 'Chlorine']
 
         for i in range(0, len(living_names)):
-            self.living_spaces.append(LivingSpace(living_names[i]))
+            l = LivingSpace(living_names[i])
+            self.living_spaces.append(l)
 
     def read_file(self, filename):
         """Returns the people from the input file passed."""
@@ -38,10 +39,10 @@ class Amity(object):
             words = line.split(' ')
             person_name = words[0] + ' ' + words[1]
             if words[2] == 'FELLOW':
-                choice = False
+                temp_choice = False
                 if words[3] == 'Y':
-                    choice = True
-                fel = Fellow(person_name, choice)
+                    temp_choice = True
+                fel = Fellow(person_name, temp_choice)
                 self.people.append(fel)
             elif words[2] == 'STAFF':
                 self.people.append(Staff(person_name))
@@ -50,36 +51,36 @@ class Amity(object):
 
         # return self.people
 
-    def allocate_rooms(self):
+    def allocate_rooms(self, type_of_room):
         """Allocates rooms"""
         random.shuffle(self.people)
-        people_count = 0
-        people_len = len(self.people)
 
-        # allocate the offices
-        # 6 * 10 = 60
-        # 3
-        for office in self.offices:
-            while office.has_space():
-                if people_count >= people_len:
-                    break
-                office.add_person(self.people[people_count])
-                people_count += 1
+        if isinstance(self.living_spaces[0], LivingSpace):
+            people_count = 0
+            people_len = len(self.people)
+            for living_space in self.living_spaces:
+                while living_space.has_space():
+                    if(people_count >= people_len):
+                        break
+                    living_space.add_person(self.people[people_count])
+                    people_count += 1
 
-            if people_count >= people_len:
-                break
+            for i in range(people_count, len(self.people)):
+                if self.people[i].job_title == 'fellow' and \
+                        self.people[i].choice is True:
+                    self.unallocated_fellows.append(self.people[i])
 
-        self.unallocated = self.people[people_count:]
-        # allocate the living_spaces
-        people_count = 0
-        for living_space in self.living_spaces:
-            while living_space.has_space():
-                if(people_count >= people_len):
-                    break
-                living_space.add_person(self.people[people_count])
-                people_count += 1
+        if isinstance(self.offices[0], Office):
+            people_count = 0
+            people_len = len(self.people)
+            for office in self.offices:
+                while office.has_space():
+                    if people_count >= people_len:
+                        break
+                    office.add_person(self.people[people_count])
+                    people_count += 1
 
-        for i in range(people_count, len(self.people)):
-            if self.people[i].job_title == 'fellow' and \
-                    self.people[i].choice is True:
-                self.unallocated_fellows.append(self.people[i])
+            self.unallocated = self.people[people_count:]
+
+        else:
+            raise Exception("Invalid arguements")
