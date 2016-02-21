@@ -51,7 +51,7 @@ class Amity(object):
 
         # return self.people
 
-    def allocate_rooms(self, type_of_room):
+    def allocate_rooms(self):
         """Allocates rooms"""
         random.shuffle(self.people)
 
