@@ -1,4 +1,4 @@
-from main.main import Amity
+from .main.main import Amity
 import sys
 
 x = Amity()
@@ -10,9 +10,7 @@ def initialise_amity():
     x.offices
     x.populate()
     # # allocate persons to rooms
-    x.allocate_rooms(x.offices)
-    x.allocate_rooms(x.living_spaces)
-    # x.allocate_rooms()
+    x.allocate_rooms()
 
 
 # Prints office allocations
