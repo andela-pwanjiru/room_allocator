@@ -57,8 +57,6 @@ class Amity(object):
             else:
                 raise Exception('Invalid input format')
 
-        # return self.people
-
     def allocate_rooms(self):
         """Allocates rooms"""
         random.shuffle(self.people)

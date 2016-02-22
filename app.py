@@ -1,5 +1,4 @@
 from main.mains import Amity
-# import sys
 import argparse
 
 x = Amity()
@@ -10,7 +9,6 @@ def initialise_amity():
     x.read_file('main/input.txt')
     x.offices
     x.populate()
-    # allocate persons to rooms
     x.allocate_rooms()
 
 
