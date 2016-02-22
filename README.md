@@ -40,6 +40,7 @@ Clone the repo
 * To view the people not allocated offices
   ```bash
   python app.py --show employees
+  ```
 
 * To view all fellows without a livingspace.
   ```bash
