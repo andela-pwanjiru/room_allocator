@@ -1,7 +1,7 @@
-from ..models.rooms import Office
-from ..models.rooms import LivingSpace
-from ..models.person import Fellow
-from ..models.person import Staff
+from models.rooms import Office
+from models.rooms import LivingSpace
+from models.person import Fellow
+from models.person import Staff
 import random
 
 
