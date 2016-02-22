@@ -1,4 +1,7 @@
-# Room_allocator [![Build Status](https://travis-ci.org/andela-pwanjiru/Room_allocator.svg?branch=master)](https://travis-ci.org/andela-pwanjiru/Room_allocator)
+# Room_allocator [![Build Status](https://travis-ci.org/andela-pwanjiru/Room_allocator.svg?branch=master)](https://travis-ci.org/andela-pwanjiru/Room_allocator) 
+[![Coverage Status](https://coveralls.io/repos/github/andela-pwanjiru/Room_allocator/badge.svg?branch=master)](https://coveralls.io/github/andela-pwanjiru/Room_allocator?branch=master)
+
+
 ### Description
 
 This is a system used to allocate offices and living spaces at Amity to Andela employees.
