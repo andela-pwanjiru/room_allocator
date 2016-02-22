@@ -25,7 +25,7 @@ def get_offices():
 
 # Prints livingspace allocations
 def get_livingspaces():
-    # import pdb; pdb.set_trace()
+
     for livingspace in x.living_spaces:
         print 'These are the people in: %s' % (livingspace.name)
         for person in livingspace.people:
