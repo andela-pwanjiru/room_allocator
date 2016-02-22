@@ -11,10 +11,10 @@ sys.path.insert(0, parentdir)
 import random
 import unittest
 from main.mains import Amity
-from models.rooms import Office
-from models.rooms import LivingSpace
-from models.person import Fellow
-from models.person import Staff
+from model.rooms import Office
+from model.rooms import LivingSpace
+from model.person import Fellow
+from model.person import Staff
 
 
 class AmityTest(unittest.TestCase):
