@@ -1,5 +1,5 @@
 # Room_allocator [![Build Status](https://travis-ci.org/andela-pwanjiru/Room_allocator.svg?branch=master)](https://travis-ci.org/andela-pwanjiru/Room_allocator) 
-[![Coverage Status](https://coveralls.io/repos/github/andela-pwanjiru/Room_allocator/badge.svg?branch=master)](https://coveralls.io/github/andela-pwanjiru/Room_allocator?branch=feature-review)
+[![Coverage Status](https://coveralls.io/repos/github/andela-pwanjiru/Room_allocator/badge.svg?branch=feature-review)](https://coveralls.io/github/andela-pwanjiru/Room_allocator?branch=feature-review)
 
 
 ### Description
