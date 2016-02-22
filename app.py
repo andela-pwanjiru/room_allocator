@@ -1,4 +1,4 @@
-from .main.main import Amity
+from .main.mains import Amity
 import sys
 
 x = Amity()
