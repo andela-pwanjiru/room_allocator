@@ -1,4 +1,4 @@
-# Room_allocator [![Build Status](https://travis-ci.org/andela-pwanjiru/Room_allocator.svg?branch=master)](https://travis-ci.org/andela-pwanjiru/Room_allocator) 
+# Room_allocator [![Build Status](https://travis-ci.org/andela-pwanjiru/Room_allocator.svg?branch=feature-review)](https://travis-ci.org/andela-pwanjiru/Room_allocator) 
 [![Coverage Status](https://coveralls.io/repos/github/andela-pwanjiru/Room_allocator/badge.svg?branch=feature-review)](https://coveralls.io/github/andela-pwanjiru/Room_allocator?branch=feature-review)
 
 
@@ -19,30 +19,34 @@ Clone the repo
 
 * To view the allocated offices
   ```bash
-  python entry.py get_offices to 
+  python app.py --offices 
   ```
 
 * To view the allocated livingspaces
   ```bash
-  python entry.py get_livingspaces
+  python app.py --living
   ```
 
-* To view members in a room
+* To view members in an office
   ```bash
-  python entry.py print members in <room name>
+  python app.py --get office
+  ```
+
+* To view members in a living space
+  ```bash
+  python app.py --get living
   ```
 
 * To view the people not allocated offices
   ```bash
-  python entry.py print unallocated employees
-  ```
+  python app.py --show employees
 
 * To view all fellows without a livingspace.
   ```bash
-  python entry.py print unallocated fellows
+  python app.py --show fellows
   ```
 
 ### How to run tests:
 ```bash
-python test.py
+nosetests
 ```

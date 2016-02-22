@@ -1,5 +1,6 @@
-from .main.mains import Amity
-import sys
+from main.mains import Amity
+# import sys
+import argparse
 
 x = Amity()
 
@@ -9,7 +10,7 @@ def initialise_amity():
     x.read_file('main/input.txt')
     x.offices
     x.populate()
-    # # allocate persons to rooms
+    # allocate persons to rooms
     x.allocate_rooms()
 
 
@@ -63,31 +64,42 @@ def get_unallocated_fellows():
 
 initialise_amity()
 
-"""List of command line arguments."""
-if sys.argv[1] == "get_offices":
+"""List of command line arguments"""
+parser = argparse.ArgumentParser(
+    prog='rm_allocator', description='Process allocation of rooms')
+
+parser.add_argument("-o", "--office", action='store_true',
+                    help="Print the offices with the allocated people.")
+
+parser.add_argument("-l", "--living", action='store_true',
+                    help="Print the living spaces with the allocated people.")
+
+parser.add_argument('-g', "--get", nargs=2, help="print individual members")
+
+parser.add_argument('-s', "--show", nargs=1, help="print unallocated members")
+
+
+args = parser.parse_args()
+
+if (args.office):
     get_offices()
 
-elif sys.argv[1] == "get_livingspaces":
+if (args.living):
     get_livingspaces()
 
-elif sys.argv[1] == "print" and sys.argv[2] == \
-        "members" and sys.argv[3] == "in":
-    individual_office(sys.argv[4])
 
-elif sys.argv[1] == "print" and sys.argv[2] == \
-        "residents" and sys.argv[3] == "in":
-    individual_living(sys.argv[4])
+if (args.get):
+    if (args.get[0] == 'office'):
+        individual_office(args.get[1])
+    elif (args.get[0] == 'living'):
+        individual_living(args.get[1])
+    else:
+        raise Exception('Argument can either be living or office')
 
-# show people (both fellows and staff) who were not allocated offices.
-elif sys.argv[1] == "print" and sys.argv[2] == "unallocated" and \
-        sys.argv[3] == "employees":
-    get_unallocated_fellows()
-
-# print fellows who wanted a living space but were unallocated.
-elif sys.argv[1] == "print" and sys.argv[2] == "unallocated" and \
-        sys.argv[3] == "fellows":
-    get_unallocated_fellows()
-
-else:
-    print "Invalid program arguments"
-    raise Exception("Invalid arguments")
+if (args.show):
+    if (args.show[0] == 'employees'):
+        get_unallocated()
+    elif (args.show[0] == 'fellows'):
+        get_unallocated_fellows()
+    else:
+        raise Exception('Argument can either be living or office')
