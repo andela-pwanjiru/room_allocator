@@ -27,15 +27,15 @@ class Amity(object):
                         'Hogwarts', 'Mordor', 'Orange', 'Turquoise',
                         'Peach', 'Cyan']
 
-        for i in range(0, len(office_names)):
-            self.offices.append(Office(office_names[i]))
+        for office in range(0, len(office_names)):
+            self.offices.append(Office(office_names[office]))
 
         living_names = ['Pearl', 'Ruby', 'Gem', 'Emerald', 'Sapphire',
                         'Diamond', 'Graphite', 'Gold', 'Lithium', 'Chlorine']
 
-        for i in range(0, len(living_names)):
-            l = LivingSpace(living_names[i])
-            self.living_spaces.append(l)
+        for living in range(0, len(living_names)):
+            live = LivingSpace(living_names[living])
+            self.living_spaces.append(live)
 
     def read_file(self, filename):
         """Returns the people from the input file passed."""
@@ -63,21 +63,24 @@ class Amity(object):
         people_count = 0
         people_len = len(self.people)
         for office in self.offices:
-                while office.has_space():
-                    if people_count >= people_len:
-                        break
-                    office.add_person(self.people[people_count])
-                    people_count += 1
-
-                self.unallocated = self.people[people_count:]
-
+            while office.has_space():
+                if people_count >= people_len:
+                    break
+                office.add_person(self.people[people_count])
+                people_count += 1
+            if people_count >= people_len:
+                break
+        self.unallocated = self.people[people_count:]
+        people_count = 0
         for living_space in self.living_spaces:
             while living_space.has_space():
                 if(people_count >= people_len):
                     break
                 living_space.add_person(self.people[people_count])
                 people_count += 1
-            for i in range(people_count, len(self.people)):
-                    if self.people[i].job_title == 'fellow' and \
-                            self.people[i].choice is True:
-                        self.unallocated_fellows.append(self.people[i])
+            if people_count >= people_len:
+                break
+        for person in range((people_count)-1, len(self.people)):
+            if self.people[person].job_title == 'fellow' and \
+                    self.people[person].choice is True:
+                self.unallocated_fellows.append(self.people[person])
