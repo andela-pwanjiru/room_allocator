@@ -72,6 +72,7 @@ class Amity(object):
                 break
         self.unallocated = self.people[people_count:]
         people_count = 0
+
         for living_space in self.living_spaces:
             while living_space.has_space():
                 if(people_count >= people_len):
