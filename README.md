@@ -2,7 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/andela-pwanjiru/room_allocator/badge.svg?branch=master)](https://coveralls.io/github/andela-pwanjiru/room_allocator?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/andela-pwanjiru/room_allocator/badges/quality-score.png?b=feature-review)](https://scrutinizer-ci.com/g/andela-pwanjiru/room_allocator/?branch=feature-review)
 
-
+git
 ### Description
 
 This is a system used to allocate offices and living spaces at Amity to Andela employees.
