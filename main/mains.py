@@ -1,10 +1,12 @@
 import os
 import sys
 import inspect
+print os.path.abspath(__file__)
 currentdir = os.path.dirname(os.path.abspath(
     inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir)
+
 
 from model.rooms import Office
 from model.rooms import LivingSpace
@@ -71,8 +73,8 @@ class Amity(object):
             if people_count >= people_len:
                 break
         self.unallocated = self.people[people_count:]
-        people_count = 0
 
+        people_count = 0
         for living_space in self.living_spaces:
             while living_space.has_space():
                 if(people_count >= people_len):

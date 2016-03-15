@@ -25,6 +25,7 @@ def initialise_amity():
     main_class.populate()
     main_class.allocate_rooms()
 
+
 # Prints office allocations
 def get_offices():
 
