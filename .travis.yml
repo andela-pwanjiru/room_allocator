@@ -14,4 +14,4 @@ after_success:
   - coveralls
 branches:
     only:
-    -feature-review  
+    - feature-review  
